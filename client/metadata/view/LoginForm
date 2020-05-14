@@ -1,0 +1,101 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "bodyPadding": 12,
+        "buttons": [
+            "[{",
+            "    text: 'Login',",
+            "    handler: 'onLoginTap'",
+            "}]"
+        ],
+        "designer|userAlias": "loginform",
+        "designer|userClassName": "LoginForm",
+        "keyMap": [
+            "{",
+            "    Enter: 'onLoginTap'",
+            "}"
+        ],
+        "keyMapEnabled": true,
+        "shadow": true,
+        "title": "Login",
+        "width": 350
+    },
+    "configAlternates": {
+        "bodyPadding": "auto",
+        "buttons": "object",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "keyMap": "object",
+        "keyMapEnabled": "boolean",
+        "shadow": "boolean",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyFormPanel",
+    "designerId": "eb8e9f98-ad9a-4c4d-bd33-06a53a5a6aea",
+    "viewControllerInstanceId": "803ea7c3-e403-44db-9a36-aa4f5982dc75",
+    "viewModelInstanceId": "8e9641f6-a0e0-4684-a504-1dea1ba327f0",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "label": "Login",
+                "name": "username"
+            },
+            "configAlternates": {
+                "label": "string",
+                "name": "string"
+            },
+            "name": "MyTextField",
+            "designerId": "9f133bef-7b3a-4738-bb75-c0ad11d24927"
+        },
+        {
+            "type": "Ext.field.Password",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "label": "Password",
+                "name": "password"
+            },
+            "configAlternates": {
+                "label": "string",
+                "name": "string"
+            },
+            "name": "MyPasswordField",
+            "designerId": "9b4bd148-ca34-4933-abfe-8bb1e6a8f961"
+        },
+        {
+            "type": "Ext.field.Checkbox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "checked": true,
+                "label": "Remember Me?",
+                "reference": "rememberMe"
+            },
+            "configAlternates": {
+                "checked": "boolean",
+                "label": "string",
+                "reference": "string"
+            },
+            "name": "MyCheckbox",
+            "designerId": "60ebf4d3-bceb-47e6-81c4-b0ff411158c0"
+        }
+    ]
+}

@@ -1,0 +1,36 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "LookupItem",
+        "idProperty": "value"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string",
+        "idProperty": "string"
+    },
+    "name": "MyModel",
+    "designerId": "bd475fd5-9f77-4c42-9588-c4589c748cca",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "name": "value"
+            },
+            "configAlternates": {
+                "name": "string"
+            },
+            "name": "field7",
+            "designerId": "8cc19094-3a5e-449b-8b04-bbf60c4ddc7a"
+        }
+    ]
+}

@@ -1,0 +1,307 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "employee",
+        "designer|userClassName": "Employee"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "idProperty": "string",
+        "validators": "array"
+    },
+    "name": "Employee1",
+    "designerId": "77b3e8be-8450-41aa-b7c6-b391811d9543",
+    "cn": [
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "EMP_NO",
+                "name": "id",
+                "persist": false
+            },
+            "configAlternates": {
+                "name": "string",
+                "persist": "boolean",
+                "mapping": "string"
+            },
+            "name": "MyInteger",
+            "designerId": "9aed9243-31b4-43af-bcc5-6a96321b7e99"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "FIRST_NAME",
+                "name": "firstName"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyString",
+            "designerId": "a600d707-a3df-4381-903e-2c2fbee8fe89"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "LAST_NAME",
+                "name": "lastName"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyString1",
+            "designerId": "77291403-9d57-423d-9ddc-3863b2bc09a9"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "PHONE_EXT",
+                "name": "phoneExt"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyString2",
+            "designerId": "a186c2fa-6678-4b58-99f9-a23a4dc1d62e"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "JOB_CODE",
+                "name": "jobCode"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyString4",
+            "designerId": "b16f5221-d772-4135-b0ec-c14ad3409796"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "defaultValue": [
+                    "null"
+                ],
+                "mapping": "JOB_GRADE",
+                "name": "jobGrade"
+            },
+            "configAlternates": {
+                "name": "string",
+                "defaultValue": "object",
+                "mapping": "string"
+            },
+            "name": "MyInteger1",
+            "designerId": "91c85cbe-c0cd-46f4-8cf2-e3a6e3ead224"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "JOB_COUNTRY",
+                "name": "jobCountry"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyString5",
+            "designerId": "346ab561-07a3-4d07-9f6e-6d71f2b17b5b"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "SALARY",
+                "name": "salary"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyInteger2",
+            "designerId": "dea5e91d-3fb7-465e-828c-424461289915"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "DEPT_NO",
+                "name": "deptId"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyString6",
+            "designerId": "7d33b44d-300a-497a-879d-dde91acd9cdb"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "depends": [
+                    "deptId"
+                ],
+                "name": "department"
+            },
+            "configAlternates": {
+                "name": "string",
+                "depends": "typedarray"
+            },
+            "name": "MyString7",
+            "designerId": "642ed20d-7c6b-4247-84b5-d57378f0ee82",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "data"
+                        ],
+                        "fn": "calculate",
+                        "implHandler": [
+                            "var me = this,",
+                            "    store = Ext.getStore('Department'),",
+                            "    department = '',",
+                            "    record;",
+                            "",
+                            "if (data.deptId !== '') {",
+                            "    record = store.getById(data.deptId);",
+                            "",
+                            "    department = record.get('department');",
+                            "}",
+                            "",
+                            "return department;"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "calculate",
+                    "designerId": "429fabed-8ef9-4139-997d-072703190f78"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.field.Date",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dateReadFormat": "YmdTHis",
+                "dateWriteFormat": "d/m/yy",
+                "mapping": "HIRE_DATE",
+                "name": "hireDate"
+            },
+            "configAlternates": {
+                "name": "string",
+                "dateFormat": "string",
+                "dateReadFormat": "string",
+                "dateWriteFormat": "string",
+                "mapping": "string"
+            },
+            "name": "MyDate",
+            "designerId": "95c680b8-9965-4366-9cb0-c378962fe2a0"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "noCache": false,
+                "url": "/data/employee/"
+            },
+            "configAlternates": {
+                "url": "string",
+                "noCache": "boolean"
+            },
+            "name": "MyRestProxy1",
+            "designerId": "23eadb1f-bd05-4c1f-bb9c-75e5c9ea31fd",
+            "cn": [
+                {
+                    "type": "Ext.data.writer.Json",
+                    "reference": {
+                        "name": "writer",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "nameProperty": "mapping"
+                    },
+                    "configAlternates": {
+                        "writeRecordId": "boolean",
+                        "nameProperty": "string"
+                    },
+                    "name": "MyJsonWriter",
+                    "designerId": "e6ddb68b-8bd5-4b7b-9cb1-03a6fcca303b"
+                }
+            ]
+        }
+    ]
+}

@@ -1,0 +1,160 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Job"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "35faaf20-ce55-407c-a421-f48e7897ea2b",
+    "cn": [
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "JOB_CODE",
+                "name": "jobCode"
+            },
+            "configAlternates": {
+                "mapping": "string",
+                "name": "string"
+            },
+            "name": "field3",
+            "designerId": "9ec0e1f6-c728-4308-9f2c-47487dc8ccb8"
+        },
+        {
+            "type": "Ext.data.field.Integer",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "JOB_GRADE",
+                "name": "jobGrade"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyInteger3",
+            "designerId": "44e0d1c0-b713-46e9-802b-d937f5eb9c93"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "JOB_COUNTRY",
+                "name": "jobCountry"
+            },
+            "configAlternates": {
+                "mapping": "string",
+                "name": "string"
+            },
+            "name": "field6",
+            "designerId": "673c3a18-2eba-4d32-8f99-03b5a4a5f4d5"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "JOB_TITLE",
+                "name": "jobTitle"
+            },
+            "configAlternates": {
+                "mapping": "string",
+                "name": "string"
+            },
+            "name": "field5",
+            "designerId": "95e87380-520a-4a07-91bf-76ac50853b37"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "MIN_SALARY",
+                "name": "minSalary"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyNumber",
+            "designerId": "5d1bdc86-e38f-4013-915d-48b5b8856aad"
+        },
+        {
+            "type": "Ext.data.field.Number",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "MAX_SALARY",
+                "name": "maxSalary"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyNumber1",
+            "designerId": "ecedc18c-d70f-47d1-a081-9a6cd2b3d1a3"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "JOB_REQUIREMENT",
+                "name": "jobRequirement"
+            },
+            "configAlternates": {
+                "mapping": "string",
+                "name": "string"
+            },
+            "name": "field8",
+            "designerId": "4b190352-8484-4a9d-8cb6-568031866672"
+        },
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/data/job/"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyRestProxy2",
+            "designerId": "74697c23-8d86-4297-b572-fd5d578860cd"
+        }
+    ]
+}

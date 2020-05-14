@@ -1,0 +1,60 @@
+{
+    "type": "Ext.app.Application",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "defaultToken": "login",
+        "models": [
+            "Department",
+            "Employee",
+            "Job",
+            "LookupItem"
+        ],
+        "name": "EmployeeApp",
+        "stores": [
+            "Department"
+        ],
+        "views": [
+            "MainPanel",
+            "LoginForm",
+            "EmployeeGrid",
+            "EmployeeForm"
+        ]
+    },
+    "configAlternates": {
+        "defaultToken": "string",
+        "models": "typedarray",
+        "name": "string",
+        "stores": "typedarray",
+        "views": "typedarray"
+    },
+    "name": "Application",
+    "designerId": "application",
+    "cn": [
+        {
+            "type": "fixedfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "launch",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "me.storage = Ext.util.LocalStorage.get('EmployeeDirectory');"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "launch",
+            "designerId": "b086ad05-1ceb-44d1-a569-b1d931eaa2a3"
+        }
+    ]
+}

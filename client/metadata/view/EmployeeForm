@@ -1,0 +1,663 @@
+{
+    "type": "Ext.form.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "employeeform",
+        "designer|userClassName": "EmployeeForm",
+        "requires": [
+            "Ext.Toast"
+        ],
+        "title": "Employee Details"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "title": "string",
+        "modelValidation": "boolean",
+        "requires": "typedarray"
+    },
+    "name": "MyFormPanel",
+    "designerId": "c4895221-0711-4778-8a84-553e8f5f97a0",
+    "viewControllerInstanceId": "a17f7e2e-db1e-484c-8560-58daed802a39",
+    "viewModelInstanceId": "05f67a61-cc45-4f2a-a2c8-2ea18c9dcfcb",
+    "cn": [
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": "{employee.firstName}",
+                "designer|displayName": "First Name",
+                "label": "First Name",
+                "maxLength": 15,
+                "required": true
+            },
+            "configAlternates": {
+                "label": "string",
+                "readOnly": "boolean",
+                "maxLength": "number",
+                "name": "string",
+                "required": "boolean",
+                "bind": "string",
+                "designer|displayName": "string"
+            },
+            "name": "MyTextField1",
+            "designerId": "07240cfc-d9dd-4bf6-b5ac-7d08607a3c98"
+        },
+        {
+            "type": "Ext.field.Text",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": "{employee.lastName}",
+                "designer|displayName": "Last Name",
+                "label": "Last Name",
+                "maxLength": 20,
+                "required": true
+            },
+            "configAlternates": {
+                "bind": "string",
+                "label": "string",
+                "maxLength": "number",
+                "name": "string",
+                "required": "boolean",
+                "designer|displayName": "string"
+            },
+            "name": "MyTextField2",
+            "designerId": "1f91becf-8ff3-4a87-9720-6e5fd733d02f"
+        },
+        {
+            "type": "Ext.field.Date",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": "{employee.hireDate}",
+                "designer|displayName": "Hire Date",
+                "label": "Hire Date",
+                "required": true
+            },
+            "configAlternates": {
+                "bind": "string",
+                "designer|displayName": "string",
+                "label": "string",
+                "required": "boolean"
+            },
+            "name": "MyDate1",
+            "designerId": "f4ef5974-a7c0-410e-a2d9-b7aa4d80743e"
+        },
+        {
+            "type": "Ext.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "bind": "{employee.phoneExt}",
+                "designer|displayName": "Phone Extension",
+                "label": "Extension",
+                "maxLength": 4
+            },
+            "configAlternates": {
+                "bind": "string",
+                "designer|displayName": "string",
+                "label": "string",
+                "maxLength": "number"
+            },
+            "name": "MyNumberField",
+            "designerId": "c366a0e7-9b8a-4264-b0fb-1bac42d4b405"
+        },
+        {
+            "type": "Ext.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Department",
+                "displayField": "department",
+                "editable": false,
+                "label": "Department",
+                "queryMode": "local",
+                "required": true,
+                "store": "Department",
+                "value": [
+                    "{employee.deptId}"
+                ],
+                "valueField": "id"
+            },
+            "configAlternates": {
+                "bind": "string",
+                "value": "binding",
+                "designer|displayName": "string",
+                "displayField": "datafield",
+                "label": "string",
+                "queryMode": "string",
+                "valueField": "datafield",
+                "editable": "boolean",
+                "required": "boolean",
+                "store": "store"
+            },
+            "name": "MyComboBox",
+            "designerId": "d6d14453-72d4-4a6a-ae15-e91664d6fdcc"
+        },
+        {
+            "type": "Ext.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Country",
+                "displayField": "value",
+                "editable": false,
+                "label": "Country",
+                "queryMode": "local",
+                "reference": "countryCombo",
+                "required": true,
+                "store": [
+                    "{country}"
+                ],
+                "value": [
+                    "{employee.jobCountry}"
+                ]
+            },
+            "configAlternates": {
+                "value": "binding",
+                "designer|displayName": "string",
+                "label": "string",
+                "maxLength": "number",
+                "store": "binding",
+                "displayField": "datafield",
+                "editable": "boolean",
+                "queryMode": "string",
+                "reference": "string",
+                "required": "boolean"
+            },
+            "name": "MyComboBox1",
+            "designerId": "96cceb42-ccfe-43e6-bce0-b1c203c33650",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onCountryChange",
+                        "implHandler": [
+                            "var me = this,",
+                            "    view = me.getView(),",
+                            "    parentView = view.up('employeegrid'),",
+                            "    jobStore = parentView.getViewModel().getStore('job'),",
+                            "    jobCodeStore = parentView.getViewModel().getStore('jobcode'),",
+                            "    country = newValue,",
+                            "    uniqueJobCodes, jobCodes, jobData;",
+                            "",
+                            "jobCodeStore.removeAll();",
+                            "",
+                            "if (country !== '') {",
+                            "    jobStore.filter('jobCountry', newValue);",
+                            "    jobData = [...jobStore.getData().items];",
+                            "    jobStore.clearFilter();",
+                            "",
+                            "    uniqueJobCodes = [...new Set(jobData.map(item => item.data.jobCode))];",
+                            "",
+                            "    jobCodes = uniqueJobCodes.map(item => ({",
+                            "        ['value']: item",
+                            "    }));",
+                            "console.log(jobCodes);",
+                            "    jobCodeStore.setData(jobCodes);",
+                            "}"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onCountryChange",
+                    "designerId": "9c362656-0c21-4828-bded-c75fac43f747"
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Job Code",
+                "displayField": "value",
+                "editable": false,
+                "label": "Job Code",
+                "queryMode": "local",
+                "reference": "jobCodeCombo",
+                "required": true,
+                "store": [
+                    "{jobcode}"
+                ],
+                "value": [
+                    "{employee.jobCode}"
+                ]
+            },
+            "configAlternates": {
+                "value": "binding",
+                "designer|displayName": "string",
+                "label": "string",
+                "maxLength": "number",
+                "store": "binding",
+                "displayField": "datafield",
+                "editable": "boolean",
+                "queryMode": "string",
+                "reference": "string",
+                "required": "boolean"
+            },
+            "name": "MyComboBox2",
+            "designerId": "fd3df092-2309-4ae9-8781-ef1f43f993c9",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onJobCodeChange",
+                        "implHandler": [
+                            "var me = this,",
+                            "    view = me.getView(),",
+                            "    parentView = view.up('employeegrid'),",
+                            "    jobStore = parentView.getViewModel().getStore('job'),",
+                            "    jobGradeStore = parentView.getViewModel().getStore('jobgrade'),",
+                            "    country = me.lookupReference('countryCombo').getValue(),",
+                            "    jobCode = newValue,",
+                            "    uniqueJobGrades, jobGrades, jobData;",
+                            "",
+                            "jobGradeStore.removeAll();",
+                            "",
+                            "if (country !== '' && newValue !== '') {",
+                            "    jobStore.filter([{",
+                            "        property: 'jobCountry',",
+                            "        value: country",
+                            "    }, {",
+                            "        property: 'jobCode',",
+                            "        value: newValue",
+                            "    }]);",
+                            "",
+                            "    jobData = [...jobStore.getData().items];",
+                            "",
+                            "    jobStore.clearFilter();",
+                            "",
+                            "    uniqueJobGrades = [...new Set(jobData.map(item => item.data.jobGrade))];",
+                            "",
+                            "    jobGrades = uniqueJobGrades.map(item => ({",
+                            "        ['value']: item",
+                            "    }));",
+                            "",
+                            "    jobGradeStore.setData(jobGrades);",
+                            "}"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onJobCodeChange",
+                    "designerId": "5af2255f-3271-4254-9119-4b61d5ca3691"
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.ComboBox",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Job Grade",
+                "displayField": "value",
+                "editable": false,
+                "label": "Job Grade",
+                "queryMode": "local",
+                "reference": "jobGradeCombo",
+                "required": true,
+                "store": [
+                    "{jobgrade}"
+                ],
+                "value": [
+                    "{employee.jobGrade}"
+                ]
+            },
+            "configAlternates": {
+                "designer|displayName": "string",
+                "label": "string",
+                "maxLength": "number",
+                "maxValue": "number",
+                "minValue": "number",
+                "value": "binding",
+                "store": "binding",
+                "displayField": "datafield",
+                "editable": "boolean",
+                "queryMode": "string",
+                "reference": "string",
+                "required": "boolean"
+            },
+            "name": "MyComboBox3",
+            "designerId": "5a979e2b-8d4d-4381-8c63-0a56ccb0119c",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onJobGradeChange",
+                        "implHandler": [
+                            "var me = this,",
+                            "    view = me.getView(),",
+                            "    parentView = view.up('employeegrid'),",
+                            "    jobStore = parentView.getViewModel().getStore('job'),",
+                            "    country = me.lookupReference('countryCombo').getValue(),",
+                            "    jobCode = me.lookupReference('jobCodeCombo').getValue(),",
+                            "    jobGrade = newValue,",
+                            "    salaryField = me.lookupReference('salaryField'),",
+                            "    minSalary = 0,",
+                            "    maxSalary = 99999999,",
+                            "    record;",
+                            "",
+                            "if (country !== '' && jobCode !== '' && jobGrade !== '') {",
+                            "    jobStore.filter([{",
+                            "        property: 'jobCountry',",
+                            "        value: country",
+                            "    }, {",
+                            "        property: 'jobCode',",
+                            "        value: jobCode",
+                            "    }, {",
+                            "        property: 'jobGrade',",
+                            "        value: jobGrade",
+                            "    }]);",
+                            "",
+                            "    if (jobStore.getCount() > 0) {",
+                            "        record = jobStore.getAt(0);",
+                            "        minSalary = record.get('minSalary');",
+                            "        maxSalary = record.get('maxSalary');",
+                            "    }",
+                            "",
+                            "    jobStore.clearFilter();",
+                            "}",
+                            "",
+                            "salaryField.setMinValue(minSalary);",
+                            "salaryField.setMaxValue(maxSalary);",
+                            "salaryField.validate();"
+                        ],
+                        "name": "change",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onJobGradeChange",
+                    "designerId": "31b6c0a6-8f79-4dad-bccd-fae974c112ec"
+                }
+            ]
+        },
+        {
+            "type": "Ext.field.Number",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|displayName": "Salary",
+                "label": "Salary",
+                "maxValue": 999999999,
+                "minValue": 0,
+                "reference": "salaryField",
+                "required": true,
+                "value": [
+                    "{employee.salary}"
+                ]
+            },
+            "configAlternates": {
+                "value": "binding",
+                "designer|displayName": "string",
+                "label": "string",
+                "maxValue": "number",
+                "minValue": "number",
+                "reference": "string",
+                "required": "boolean"
+            },
+            "name": "MyNumberField1",
+            "designerId": "749ae601-000b-4857-9ea1-1f736c61f284"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar",
+            "designerId": "deb67199-260c-4006-ac45-bc9273da4080",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-save",
+                        "text": "Save"
+                    },
+                    "configAlternates": {
+                        "designer|uiInterfaceName": "string",
+                        "text": "string",
+                        "ui": "string",
+                        "iconCls": "string"
+                    },
+                    "name": "MyButton",
+                    "designerId": "3df08389-741f-4804-a3f6-ae98fdf33091",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onSaveTap",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    form = me.getView(),",
+                                    "    record = me.getViewModel().get('employee');",
+                                    "",
+                                    "if (form.validate()) {",
+                                    "    Ext.Viewport.setMasked({",
+                                    "        xtype: 'loadmask',",
+                                    "        message: 'Saving...'",
+                                    "    });",
+                                    "",
+                                    "    me.phantom = record.phantom;",
+                                    "    ",
+                                    "    record.save({",
+                                    "        callback: me.onSaveCallback,",
+                                    "        scope: me",
+                                    "    });",
+                                    "} else {",
+                                    "    Ext.Msg.alert('Validation error', 'There are validation errors. Please correct these before saving.');",
+                                    "}"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onSaveTap",
+                            "designerId": "6cbb3dc3-b7f5-475a-b46c-c511f2593d60"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-undo",
+                        "text": "Cancel"
+                    },
+                    "configAlternates": {
+                        "designer|uiInterfaceName": "string",
+                        "text": "string",
+                        "ui": "string",
+                        "iconCls": "string"
+                    },
+                    "name": "MyButton1",
+                    "designerId": "fa917bad-5220-4070-ae8d-1779491200d3",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onCancelTap",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "",
+                                    "me.getViewModel().get('employee').cancelEdit();",
+                                    "me.getViewModel().set('employee', null);",
+                                    "",
+                                    "me.getView().hide();",
+                                    "",
+                                    "me.redirectTo('employees');"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onCancelTap",
+                            "designerId": "fca2662e-ee38-46cd-a69b-3ba194e89b59"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "MySpacer",
+                    "designerId": "f24dda7e-cacd-48a9-ad42-61dbc3e4ba23"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "hidden": [
+                            "{employee.phantom}"
+                        ],
+                        "iconCls": "x-fa fa-trash",
+                        "text": "Delete"
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "text": "string",
+                        "hidden": "binding"
+                    },
+                    "name": "MyButton2",
+                    "designerId": "98503f33-9a3b-4054-9f50-b1b7e4b9c2fa",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onDeleteTap",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "",
+                                    "Ext.Msg.confirm('Delete record?', 'Are you sure you want to delete the selected employee record?', me.onConfirmDeleteCallback, me);"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onDeleteTap",
+                            "designerId": "8f63a149-b924-4b25-8a56-13b9e2c3adc8"
+                        }
+                    ]
+                }
+            ]
+        }
+    ]
+}

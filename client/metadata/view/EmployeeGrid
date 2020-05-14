@@ -1,0 +1,519 @@
+{
+    "type": "Ext.grid.Grid",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "employeegrid",
+        "designer|userClassName": "EmployeeGrid",
+        "height": "100%",
+        "name": "EmployeeGrid",
+        "store": [
+            "{employee}"
+        ],
+        "width": "100%"
+    },
+    "configAlternates": {
+        "store": "binding",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "height": "auto",
+        "name": "string",
+        "title": "string",
+        "width": "auto"
+    },
+    "name": "MyGrid",
+    "designerId": "aa9bd843-3dfa-4041-805c-f82aea8c4b06",
+    "viewControllerInstanceId": "1b19f055-cd27-45d8-a1b1-a6bedcd730ed",
+    "viewModelInstanceId": "2a630c52-d237-4fd7-8817-63ebff8a434f",
+    "cn": [
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "id",
+                "docked": null,
+                "format": "00",
+                "text": "Emp No"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn1",
+            "designerId": "72663e1d-925f-4883-adee-1909c9db63d7"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "firstName",
+                "docked": null,
+                "flex": 1,
+                "text": "First Name"
+            },
+            "configAlternates": {
+                "flex": "number",
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyColumn1",
+            "designerId": "d6c6b04e-b9c1-4bde-b4d8-08fc51ccf708",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "flex",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "lastName",
+                "docked": null,
+                "flex": 1,
+                "text": "Last Name"
+            },
+            "configAlternates": {
+                "flex": "number",
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyColumn2",
+            "designerId": "6b3a55a0-461a-4923-8c70-5e5b241c3082",
+            "customConfigs": [
+                {
+                    "group": "(Custom Properties)",
+                    "name": "flex",
+                    "type": "string"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "phoneExt",
+                "docked": null,
+                "text": "Phone Ext"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyColumn3",
+            "designerId": "2f95722b-9069-4ddd-8df2-d065a10a1dbd",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return value !== '' ? 'x' + value : '';"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "8f794658-33f1-48d8-a750-2c55dfdcaf73"
+                }
+            ]
+        },
+        {
+            "type": "Ext.grid.column.Date",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "hireDate",
+                "docked": null,
+                "text": "Hire Date"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyDateColumn",
+            "designerId": "cdd8cf1d-287d-4436-86d6-c1807f242739"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "jobCode",
+                "docked": null,
+                "text": "Job Code"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string"
+            },
+            "name": "MyColumn5",
+            "designerId": "8fd2f75d-3237-4637-8b7b-b7e6afcb6938"
+        },
+        {
+            "type": "Ext.grid.column.Number",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "jobGrade",
+                "docked": null,
+                "format": "00",
+                "text": "Job Grade"
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "format": "string",
+                "text": "string"
+            },
+            "name": "MyNumberColumn2",
+            "designerId": "34ffbee2-3fc9-40df-89dc-bb8d7b8edf98"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "jobCountry",
+                "docked": null,
+                "text": "Job Country",
+                "width": 150
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn6",
+            "designerId": "cf6807b6-6cbc-439e-a173-3916bcf07187"
+        },
+        {
+            "type": "Ext.grid.column.Column",
+            "reference": {
+                "name": "columns",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "dataIndex": "salary",
+                "docked": null,
+                "text": "Salary",
+                "width": 150
+            },
+            "configAlternates": {
+                "dataIndex": "datafield",
+                "docked": "string",
+                "text": "string",
+                "width": "auto"
+            },
+            "name": "MyColumn",
+            "designerId": "ab8d39c6-f130-4388-93c9-ff013f82c616",
+            "cn": [
+                {
+                    "type": "fixedfunction",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|params": [
+                            "value",
+                            "record",
+                            "dataIndex",
+                            "cell",
+                            "column"
+                        ],
+                        "fn": "renderer",
+                        "implHandler": [
+                            "return EmployeeApp.util.Format.intlCurrency(record.data.jobCountry, value);"
+                        ]
+                    },
+                    "configAlternates": {
+                        "designer|params": "typedarray",
+                        "fn": "string",
+                        "implHandler": "code"
+                    },
+                    "name": "renderer",
+                    "designerId": "c73dd952-a4fb-4397-b022-ca94b8b380bc"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridSelect",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "me.redirectTo('employee/' + selected[0].getId());"
+                ],
+                "name": "select",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onGridSelect",
+            "designerId": "b06e8132-02b8-442a-9e69-7e13ab430bad"
+        },
+        {
+            "type": "Ext.Toolbar",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "top"
+            },
+            "configAlternates": {
+                "docked": "string"
+            },
+            "name": "MyToolbar1",
+            "designerId": "a8dece4a-1b2d-4d1f-a72e-14939e8dd2db",
+            "cn": [
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "iconCls": "x-fa fa-plus",
+                        "text": "New Employee"
+                    },
+                    "configAlternates": {
+                        "iconCls": "string",
+                        "text": "string"
+                    },
+                    "name": "MyButton3",
+                    "designerId": "b142ce06-bf3d-4171-9c5b-b26a23f9cbae",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onNewEmployeeTap",
+                                "implHandler": [
+                                    "var me = this;",
+                                    "",
+                                    "me.redirectTo('employee/new');"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onNewEmployeeTap",
+                            "designerId": "afd000c7-d35e-4137-953d-9939269b9396"
+                        }
+                    ]
+                },
+                {
+                    "type": "Ext.Spacer",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "docked": null
+                    },
+                    "configAlternates": {
+                        "docked": "string"
+                    },
+                    "name": "MySpacer1",
+                    "designerId": "de1218f8-b175-4bb7-af32-0f67e4a74529"
+                },
+                {
+                    "type": "Ext.Button",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "designer|displayName": "Refresh",
+                        "iconCls": "x-fa fa-sync",
+                        "tooltip": "Refresh data"
+                    },
+                    "configAlternates": {
+                        "designer|displayName": "string",
+                        "iconCls": "string",
+                        "tooltip": "string"
+                    },
+                    "name": "MyButton4",
+                    "designerId": "5285a255-b0c6-4ad2-b93d-1b0ca36917a1",
+                    "cn": [
+                        {
+                            "type": "viewcontrollereventbinding",
+                            "reference": {
+                                "name": "listeners",
+                                "type": "array"
+                            },
+                            "codeClass": null,
+                            "userConfig": {
+                                "fn": "onRefreshTap",
+                                "implHandler": [
+                                    "var me = this,",
+                                    "    grid = me.getView(),",
+                                    "    store = grid.getStore().getSource();",
+                                    "",
+                                    "me.redirectTo('employees');",
+                                    "",
+                                    "store.reload();"
+                                ],
+                                "name": "tap",
+                                "scope": "me"
+                            },
+                            "configAlternates": {
+                                "fn": "string",
+                                "implHandler": "code",
+                                "name": "string",
+                                "scope": "string"
+                            },
+                            "name": "onRefreshTap",
+                            "designerId": "886400c1-71b1-42dd-9bf8-a8dda312c763"
+                        }
+                    ]
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onGridActivate",
+                "implHandler": [
+                    "var me = this,",
+                    "    departmentStore = Ext.getStore('Department'),",
+                    "    employeeStore = me.getStore('employee'),",
+                    "    jobStore = me.getStore('job');",
+                    "",
+                    "// Load the department store first, so we can group employees by departments",
+                    "departmentStore.on({",
+                    "    load: function() {",
+                    "        employeeStore.load();  // Then load the employees",
+                    "    }",
+                    "});",
+                    "",
+                    "departmentStore.load();",
+                    "jobStore.load();"
+                ],
+                "name": "activate",
+                "scope": "me",
+                "single": true
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string",
+                "single": "boolean"
+            },
+            "name": "onGridActivate",
+            "designerId": "71e1565d-ba8f-49c8-9267-e2299d57cfd8"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "docked": "right",
+                "hidden": true,
+                "maxWidth": 600,
+                "minWidth": 450
+            },
+            "configAlternates": {
+                "docked": "string",
+                "hidden": "boolean",
+                "maxWidth": "auto",
+                "minWidth": "auto"
+            },
+            "name": "employeeform",
+            "designerId": "2d4b3c7a-7f4f-4b8f-830b-372acbd041dc",
+            "masterInstanceId": "c4895221-0711-4778-8a84-553e8f5f97a0"
+        }
+    ]
+}

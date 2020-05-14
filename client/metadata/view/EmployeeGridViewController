@@ -1,0 +1,18 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "employeegrid",
+        "designer|userClassName": "EmployeeGridViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyGridViewController",
+    "designerId": "1b19f055-cd27-45d8-a1b1-a6bedcd730ed"
+}

@@ -1,0 +1,70 @@
+{
+    "type": "Ext.data.Model",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userClassName": "Department"
+    },
+    "configAlternates": {
+        "designer|userClassName": "string"
+    },
+    "name": "MyModel",
+    "designerId": "828ab1a9-b899-4493-b80c-2fa767a7f852",
+    "cn": [
+        {
+            "type": "Ext.data.proxy.Rest",
+            "reference": {
+                "name": "proxy",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "url": "/data/department/"
+            },
+            "configAlternates": {
+                "url": "string"
+            },
+            "name": "MyRestProxy",
+            "designerId": "6006e1a3-654e-4836-93b7-351450ad9e0b"
+        },
+        {
+            "type": "Ext.data.field.String",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "DEPT_NO",
+                "name": "id"
+            },
+            "configAlternates": {
+                "name": "string",
+                "mapping": "string"
+            },
+            "name": "MyString",
+            "designerId": "c796a61a-76bf-48d0-8bef-35d5b766f841"
+        },
+        {
+            "type": "Ext.data.field.Field",
+            "reference": {
+                "name": "fields",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "mapping": "DEPARTMENT",
+                "name": "department"
+            },
+            "configAlternates": {
+                "mapping": "string",
+                "name": "string"
+            },
+            "name": "field1",
+            "designerId": "36729633-a907-4c8d-a814-121dd1ae8204"
+        }
+    ]
+}

@@ -1,0 +1,151 @@
+{
+    "type": "Ext.Panel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|initialView": true,
+        "designer|userAlias": "mainpanel",
+        "designer|userClassName": "MainPanel",
+        "layout": "card",
+        "title": "Employee Directory"
+    },
+    "configAlternates": {
+        "designer|initialView": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "layout": "string",
+        "title": "string"
+    },
+    "name": "MyPanel",
+    "designerId": "b74ced1e-a765-4861-af4c-a0e2eaca8c9d",
+    "viewControllerInstanceId": "40721373-f476-4b91-bb97-3a9b5e9326ec",
+    "viewModelInstanceId": "bcda5d37-cca7-4263-9d7f-c3be990d07ae",
+    "cn": [
+        {
+            "type": "Ext.Tool",
+            "reference": {
+                "name": "tools",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "hidden": true,
+                "iconCls": "x-fa fa-user-lock",
+                "reference": "logout"
+            },
+            "configAlternates": {
+                "hidden": "boolean",
+                "iconCls": "string",
+                "reference": "string"
+            },
+            "name": "MyTool",
+            "designerId": "3fe5fb69-03c6-46a3-9877-9f9b8adcd97b",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onLogoutClick",
+                        "implHandler": [
+                            "var me = this;",
+                            "",
+                            "me.redirectTo('logout');"
+                        ],
+                        "name": "click",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onLogoutClick",
+                    "designerId": "8415e8d8-56b0-497f-af1c-be586df7174d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.Container",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "layout": "center"
+            },
+            "configAlternates": {
+                "layout": "string"
+            },
+            "name": "MyContainer",
+            "designerId": "d1208dcd-74b2-4f0c-909b-194e80b24ec5",
+            "cn": [
+                {
+                    "type": "linkedinstance",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "name": "loginform",
+                    "designerId": "20b65ef5-aa8b-44dc-972a-5177e7069069",
+                    "masterInstanceId": "eb8e9f98-ad9a-4c4d-bd33-06a53a5a6aea"
+                }
+            ]
+        },
+        {
+            "type": "viewcontrollereventbinding",
+            "reference": {
+                "name": "listeners",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "onPanelInitialize",
+                "implHandler": [
+                    "var me = this,",
+                    "    view = me.getView(),",
+                    "    storage = Ext.util.LocalStorage.get('EmployeeDirectory'),",
+                    "    sessionToken = storage.getItem('sessionToken'),",
+                    "    loginForm = view.down('loginform');",
+                    "",
+                    "if (sessionToken !== null) {",
+                    "    Ext.Ajax.setDefaultHeaders({'X-Embarcadero-Session-Token': sessionToken});",
+                    "",
+                    "    loginForm.hide();",
+                    "    me.loginSuccess();",
+                    "}"
+                ],
+                "name": "initialize",
+                "scope": "me"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "name": "string",
+                "scope": "string"
+            },
+            "name": "onPanelInitialize",
+            "designerId": "1cc23db7-922d-422f-8a00-fc40e53ca461"
+        },
+        {
+            "type": "linkedinstance",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "name": "employeegrid",
+            "designerId": "c9b78575-c29d-43b6-a636-67058df3759e",
+            "masterInstanceId": "aa9bd843-3dfa-4041-805c-f82aea8c4b06"
+        }
+    ]
+}

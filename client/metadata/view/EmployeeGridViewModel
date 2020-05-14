@@ -1,0 +1,247 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "    employeeRecord: null",
+            "}"
+        ],
+        "designer|userAlias": "employeegrid",
+        "designer|userClassName": "EmployeeGridViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "data": "object"
+    },
+    "name": "MyGridViewModel",
+    "designerId": "2a630c52-d237-4fd7-8817-63ebff8a434f",
+    "cn": [
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": false,
+                "groupField": "department",
+                "model": "Employee",
+                "name": "employee"
+            },
+            "configAlternates": {
+                "autoLoad": "boolean",
+                "groupField": "datafield",
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore",
+            "designerId": "6932911d-bb52-4515-831e-c821d9b87ecb",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "firstName"
+                    },
+                    "configAlternates": {
+                        "property": "string"
+                    },
+                    "name": "MySorter",
+                    "designerId": "94525e80-3f7d-4800-95db-8acaac9a9d7d"
+                },
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "lastName"
+                    },
+                    "configAlternates": {
+                        "property": "string"
+                    },
+                    "name": "MySorter1",
+                    "designerId": "60d00463-1255-42af-911f-a25e3019aec9"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "autoLoad": false,
+                "model": "Job",
+                "name": "job"
+            },
+            "configAlternates": {
+                "autoLoad": "boolean",
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore2",
+            "designerId": "5e24c2c7-de4b-44bd-9c68-14b956294689",
+            "cn": [
+                {
+                    "type": "viewcontrollereventbinding",
+                    "reference": {
+                        "name": "listeners",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "fn": "onJobStoreLoad",
+                        "implHandler": [
+                            "var me = this,",
+                            "    view = me.getView(),",
+                            "    countryStore = me.getStore('country'),",
+                            "    uniqueCountries, countries;",
+                            "",
+                            "uniqueCountries = [...new Set(records.map(item => item.data.jobCountry))];",
+                            "",
+                            "countries = uniqueCountries.map(item => ({",
+                            "    ['value']: item",
+                            "}));",
+                            "",
+                            "countryStore.setData(countries);"
+                        ],
+                        "name": "load",
+                        "scope": "me"
+                    },
+                    "configAlternates": {
+                        "fn": "string",
+                        "implHandler": "code",
+                        "name": "string",
+                        "scope": "string"
+                    },
+                    "name": "onJobStoreLoad",
+                    "designerId": "05899cdc-3ce0-4985-82eb-884a0217cca0"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "LookupItem",
+                "name": "country"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore3",
+            "designerId": "819a7988-d7b0-4888-81a2-93907c2214d4",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "value"
+                    },
+                    "configAlternates": {
+                        "property": "string"
+                    },
+                    "name": "MySorter4",
+                    "designerId": "9f4c65b4-8858-497e-b11e-3db904d40c1b"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "LookupItem",
+                "name": "jobcode"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore4",
+            "designerId": "8980ff81-c0d5-4f6b-9ee3-cf2b291a7a37",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "value"
+                    },
+                    "configAlternates": {
+                        "property": "string"
+                    },
+                    "name": "MySorter3",
+                    "designerId": "337535d5-62f3-4eba-9a98-476e1869b8c8"
+                }
+            ]
+        },
+        {
+            "type": "Ext.data.Store",
+            "reference": {
+                "name": "stores",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "model": "LookupItem",
+                "name": "jobgrade"
+            },
+            "configAlternates": {
+                "model": "model",
+                "name": "string"
+            },
+            "name": "MyStore5",
+            "designerId": "d6bb9fa8-24b5-486a-ba91-96313a84782c",
+            "cn": [
+                {
+                    "type": "Ext.util.Sorter",
+                    "reference": {
+                        "name": "sorters",
+                        "type": "object"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "property": "value"
+                    },
+                    "configAlternates": {
+                        "property": "string"
+                    },
+                    "name": "MySorter5",
+                    "designerId": "b8428a3e-ce48-46ea-8462-173dc3cfd3a5"
+                }
+            ]
+        }
+    ]
+}

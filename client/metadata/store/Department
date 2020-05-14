@@ -1,0 +1,40 @@
+{
+    "type": "Ext.data.Store",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "autoLoad": false,
+        "designer|userClassName": "Department",
+        "model": "Department",
+        "storeId": "Department"
+    },
+    "configAlternates": {
+        "autoLoad": "boolean",
+        "designer|userClassName": "string",
+        "model": "model",
+        "storeId": "string"
+    },
+    "name": "MyStore",
+    "designerId": "e2f75de5-9f23-4d73-bd61-fe3aac438bc6",
+    "cn": [
+        {
+            "type": "Ext.util.Sorter",
+            "reference": {
+                "name": "sorters",
+                "type": "object"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "property": "department"
+            },
+            "configAlternates": {
+                "property": "string"
+            },
+            "name": "MySorter",
+            "designerId": "7e4bd0ec-b32b-4c7d-9dba-4d25e72786f0"
+        }
+    ]
+}

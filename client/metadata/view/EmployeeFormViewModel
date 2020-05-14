@@ -1,0 +1,24 @@
+{
+    "type": "Ext.app.ViewModel",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "data": [
+            "{",
+            "    employee: null",
+            "}"
+        ],
+        "designer|userAlias": "employeeform",
+        "designer|userClassName": "EmployeeFormViewModel"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "data": "object"
+    },
+    "name": "MyFormPanelViewModel",
+    "designerId": "05f67a61-cc45-4f2a-a2c8-2ea18c9dcfcb"
+}

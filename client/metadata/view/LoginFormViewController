@@ -1,0 +1,116 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "loginform",
+        "designer|userClassName": "LoginFormViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyFormPanelViewController",
+    "designerId": "803ea7c3-e403-44db-9a36-aa4f5982dc75",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "button"
+                ],
+                "fn": "onLoginTap",
+                "implHandler": [
+                    "var me = this,",
+                    "    form = me.getView(),",
+                    "    values = form.getValues();",
+                    "",
+                    "if (form.validate()) {",
+                    "    Ext.Viewport.setMasked({",
+                    "        xtype: 'loadmask',",
+                    "        message: 'Logging In...'",
+                    "    });",
+                    "",
+                    "    Ext.Ajax.request({",
+                    "        url: '/users/login',",
+                    "        method: 'POST',",
+                    "        jsonData: values,",
+                    "        scope: me,",
+                    "        callback: me.onLoginCallback",
+                    "    });",
+                    "} else {",
+                    "    Ext.Msg.alert('Invalid Details', 'Please enter your login name and password.');",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onLoginTap",
+            "designerId": "4d3ef2d9-1aa5-4e4f-a235-7e6383a3e7df"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "options",
+                    "success",
+                    "response"
+                ],
+                "fn": "onLoginCallback",
+                "implHandler": [
+                    "var me = this,",
+                    "    form = me.getView(),",
+                    "    mainView = form.up('mainpanel'),",
+                    "    mainController = mainView.getController(),",
+                    "    logoutButton = mainView.lookupReference('logout'),",
+                    "    responseData = Ext.decode(response.responseText),",
+                    "    rememberMe = me.lookup('rememberMe').isChecked(),",
+                    "    storage = Ext.getApplication().storage,",
+                    "    title, error;",
+                    "",
+                    "Ext.Viewport.setMasked(false);",
+                    "",
+                    "if (success) {",
+                    "    Ext.Ajax.setDefaultHeaders({'X-Embarcadero-Session-Token': responseData.sessionToken});",
+                    "",
+                    "    if (rememberMe) {",
+                    "        storage.setItem('sessionToken', responseData.sessionToken);",
+                    "    }",
+                    "",
+                    "    form.reset(true);",
+                    "",
+                    "    mainController.loginSuccess();",
+                    "} else {",
+                    "    title = responseData.error || 'Login Error';",
+                    "    error = responseData.description || 'Unhandled error';",
+                    "",
+                    "    Ext.Msg.alert(title, error);",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onLoginCallback",
+            "designerId": "926dd09b-e03f-46ea-a6a1-4e634eb5cd5a"
+        }
+    ]
+}

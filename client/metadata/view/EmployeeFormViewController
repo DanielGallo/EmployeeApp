@@ -1,0 +1,251 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "employeeform",
+        "designer|userClassName": "EmployeeFormViewController"
+    },
+    "configAlternates": {
+        "designer|userAlias": "string",
+        "designer|userClassName": "string"
+    },
+    "name": "MyFormPanelViewController",
+    "designerId": "a17f7e2e-db1e-484c-8560-58daed802a39",
+    "cn": [
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record",
+                    "operation",
+                    "success"
+                ],
+                "fn": "onSaveCallback",
+                "implHandler": [
+                    "var me = this,",
+                    "    form = me.getView(),",
+                    "    employeeStore = form.up('employeegrid').getViewModel().getStore('employee'),",
+                    "    responseError, description;",
+                    "",
+                    "Ext.Viewport.setMasked(false);",
+                    "",
+                    "if (success) {",
+                    "    record.endEdit();",
+                    "",
+                    "    Ext.toast('Record saved!');",
+                    "",
+                    "    form.hide();",
+                    "",
+                    "    if (me.phantom) {",
+                    "        // New record, so reload the grid's store to load all records",
+                    "        employeeStore.reload();",
+                    "    }",
+                    "",
+                    "    me.redirectTo('employees');",
+                    "} else {",
+                    "    if (operation.getError().response && operation.getError().response.responseJson) {",
+                    "        responseError = operation.getError().response.responseJson;",
+                    "        description = responseError.description || 'Unhandled error';",
+                    "",
+                    "        Ext.Msg.alert('Error', 'An error has occurred when trying to save: ' + description);",
+                    "    } else {",
+                    "        Ext.Msg.alert('Error', 'An unknown error has occurred when trying to save. Please try again.');",
+                    "    }",
+                    "",
+                    "    record.cancelEdit();",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onSaveCallback",
+            "designerId": "daafe8e5-af63-400c-80c4-a70538e6da3d"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "buttonId",
+                    "value"
+                ],
+                "fn": "onConfirmDeleteCallback",
+                "implHandler": [
+                    "var me = this,",
+                    "    form = me.getView(),",
+                    "    employeeStore = form.up('employeegrid').getViewModel().getStore('employee'),",
+                    "    viewModel = me.getViewModel(),",
+                    "    record = viewModel.get('employee');",
+                    "",
+                    "if (buttonId === 'yes') {",
+                    "    Ext.Viewport.setMasked({",
+                    "        xtype: 'loadmask',",
+                    "        message: 'Deleting...'",
+                    "    });",
+                    "",
+                    "    employeeStore.remove(record);",
+                    "",
+                    "    employeeStore.sync({",
+                    "        callback: me.onDeleteCallback,",
+                    "        scope: me",
+                    "    });",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onConfirmDeleteCallback",
+            "designerId": "f1dd8735-b7e7-4df3-b5fc-e66afd0cda93"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "batch",
+                    "options"
+                ],
+                "fn": "onDeleteCallback",
+                "implHandler": [
+                    "var me = this,",
+                    "    form = me.getView(),",
+                    "    employeeStore = form.up('employeegrid').getViewModel().getStore('employee'),",
+                    "    success = !batch.exception,",
+                    "    operation, responseError, description;",
+                    "",
+                    "Ext.Viewport.setMasked(false);",
+                    "",
+                    "if (success) {",
+                    "    Ext.toast('Record deleted!');",
+                    "",
+                    "    form.setRecord(null);",
+                    "    form.hide();",
+                    "",
+                    "    me.redirectTo('employees');",
+                    "} else {",
+                    "    employeeStore.rejectChanges();",
+                    "    operation = batch.operations[0];",
+                    "",
+                    "    if (operation.getError().response && operation.getError().response.responseJson) {",
+                    "        responseError = operation.getError().response.responseJson;",
+                    "        description = responseError.description || 'Unhandled error';",
+                    "",
+                    "        Ext.Msg.alert('Error', 'An error has occurred when trying to delete: ' + description);",
+                    "    } else {",
+                    "        Ext.Msg.alert('Error', 'An unknown error has occurred when trying to delete. Please try again.');",
+                    "    }",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "onDeleteCallback",
+            "designerId": "5171cb4b-4446-473b-b800-b345f4330fa9"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "loadRecord",
+                "implHandler": [
+                    "var me = this,",
+                    "    form = me.getView(),",
+                    "    grid = form.up('employeegrid'),",
+                    "    viewModel = me.getViewModel(),",
+                    "    previousRecord = viewModel.get('employee');",
+                    "",
+                    "if (previousRecord !== null) {",
+                    "    previousRecord.cancelEdit();",
+                    "    viewModel.set('employee', null);",
+                    "}",
+                    "",
+                    "if (record !== null) {",
+                    "    me.prepareComboboxes(record);",
+                    "    ",
+                    "    viewModel.set('employee', record);",
+                    "",
+                    "    record.beginEdit();",
+                    "",
+                    "    form.show();",
+                    "",
+                    "    if (!record.phantom) {",
+                    "        // If this isn't a phantom (new) record, select the associated row for the record in the grid",
+                    "        grid.getSelectable().select(record);",
+                    "    }",
+                    "} else {",
+                    "    // Record no longer exists or was an invalid record id entered in URL, so do nothing",
+                    "    form.hide();",
+                    "}"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loadRecord",
+            "designerId": "1f8f347f-dab6-4eb2-a02c-aae10ca3c06c"
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "record"
+                ],
+                "fn": "prepareComboboxes",
+                "implHandler": [
+                    "var me = this;",
+                    "",
+                    "me.lookupReference('countryCombo').setValue(record.get('jobCountry'));",
+                    "me.lookupReference('jobCodeCombo').setValue(record.get('jobCode'));",
+                    "me.lookupReference('jobGradeCombo').setValue(record.get('jobGrade'));"
+                ]
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "prepareComboboxes",
+            "designerId": "60bb6330-aac3-4b87-b30d-f578455af98e"
+        }
+    ]
+}

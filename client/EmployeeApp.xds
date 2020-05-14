@@ -1,0 +1,69 @@
+{
+    "name": "EmployeeApp",
+    "settings": {
+        "cmd": {
+            "license": "commercial",
+            "cmdVersion": "7.2.0.56",
+            "frameworkVersion": "7.2.0.67"
+        },
+        "urlPrefixTemplate": "http://localhost:{port}/{path}",
+        "urlPrefix": "http://localhost:52698/",
+        "canvasControls": {
+            "viewportSize": {
+                "name": "Desktop (Auto Expand)",
+                "builtIn": true,
+                "height": null,
+                "width": null
+            },
+            "viewportOrientation": "portrait"
+        },
+        "exportPath": "",
+        "spacesToIndent": 4,
+        "sdkPath": "",
+        "lineEnding": "LF",
+        "genTimestamps": false,
+        "cacheBust": false,
+        "buildShouldOverwriteIndex": true,
+        "generateArchitectVersion": true
+    },
+    "xdsVersion": "4.2.8",
+    "xdsBuild": 440,
+    "schemaVersion": 1,
+    "upgradeVersion": 310000000001,
+    "framework": "modern72",
+    "viewOrderMap": {
+        "view": [
+            "b74ced1e-a765-4861-af4c-a0e2eaca8c9d",
+            "bcda5d37-cca7-4263-9d7f-c3be990d07ae",
+            "40721373-f476-4b91-bb97-3a9b5e9326ec",
+            "8e9641f6-a0e0-4684-a504-1dea1ba327f0",
+            "803ea7c3-e403-44db-9a36-aa4f5982dc75",
+            "eb8e9f98-ad9a-4c4d-bd33-06a53a5a6aea",
+            "2a630c52-d237-4fd7-8817-63ebff8a434f",
+            "1b19f055-cd27-45d8-a1b1-a6bedcd730ed",
+            "aa9bd843-3dfa-4041-805c-f82aea8c4b06",
+            "05f67a61-cc45-4f2a-a2c8-2ea18c9dcfcb",
+            "a17f7e2e-db1e-484c-8560-58daed802a39",
+            "c4895221-0711-4778-8a84-553e8f5f97a0"
+        ],
+        "store": [
+            "e2f75de5-9f23-4d73-bd61-fe3aac438bc6"
+        ],
+        "controller": [],
+        "model": [
+            "828ab1a9-b899-4493-b80c-2fa767a7f852",
+            "77b3e8be-8450-41aa-b7c6-b391811d9543",
+            "35faaf20-ce55-407c-a421-f48e7897ea2b",
+            "bd475fd5-9f77-4c42-9588-c4589c748cca"
+        ],
+        "resource": [
+            "f525ebcd-3522-4f92-95c5-f6b425efd4b0",
+            "a09f7719-f5fd-4bf7-bc18-f54e2576f665",
+            "6c7a53e4-bb36-44ef-988c-7c5d0ced8cf3",
+            "5a4f938a-f2eb-4902-bd33-c89fb675779b"
+        ],
+        "app": [
+            "application"
+        ]
+    }
+}

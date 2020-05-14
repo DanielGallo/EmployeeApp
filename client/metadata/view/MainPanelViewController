@@ -1,0 +1,276 @@
+{
+    "type": "Ext.app.ViewController",
+    "reference": {
+        "name": "items",
+        "type": "array"
+    },
+    "codeClass": null,
+    "userConfig": {
+        "designer|userAlias": "mainpanel",
+        "designer|userClassName": "MainPanelViewController",
+        "loggedIn": false,
+        "requires": [
+            "Ext.util.LocalStorage"
+        ]
+    },
+    "configAlternates": {
+        "loggedIn": "boolean",
+        "designer|userAlias": "string",
+        "designer|userClassName": "string",
+        "requires": "typedarray"
+    },
+    "designerId": "40721373-f476-4b91-bb97-3a9b5e9326ec",
+    "customConfigs": [
+        {
+            "group": "(Custom Properties)",
+            "name": "loggedIn",
+            "type": "string"
+        }
+    ],
+    "cn": [
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "handleLoginRoute",
+                "implHandler": [
+                    "var me = this,",
+                    "    view = me.getView(),",
+                    "    loginForm = view.down('loginform');",
+                    "",
+                    "view.setActiveItem(0);",
+                    "loginForm.show();"
+                ],
+                "url": "login"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "handleLoginRoute",
+            "designerId": "68eaf339-a84f-4455-97ca-8496edbe1a11"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "handleLogoutRoute",
+                "implHandler": [
+                    "var me = this,",
+                    "    view = me.getView(),",
+                    "    logoutButton = view.lookupReference('logout'),",
+                    "    grid = view.down('employeegrid'),",
+                    "    storage = Ext.getApplication().storage;",
+                    "",
+                    "Ext.Ajax.setDefaultHeaders({'X-Embarcadero-Session-Token': ''});",
+                    "storage.removeItem('sessionToken');",
+                    "",
+                    "me.setLoggedIn(false);",
+                    "",
+                    "view.setActiveItem(0);",
+                    "",
+                    "logoutButton.hide();",
+                    "",
+                    "grid.destroy();",
+                    "",
+                    "me.redirectTo('login');"
+                ],
+                "url": "logout"
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "handleLogoutRoute",
+            "designerId": "28190a71-748a-48fa-9fd3-0fd43aa51670"
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "type"
+                ],
+                "fn": "handleMainRoute",
+                "implHandler": [
+                    "var me = this,",
+                    "    view = me.getView(),",
+                    "    logoutButton = view.lookupReference('logout'),",
+                    "    grid, form;",
+                    "",
+                    "if (!me.getLoggedIn()) {",
+                    "    me.redirectTo('login');",
+                    "} else {",
+                    "    view.setActiveItem(1);",
+                    "",
+                    "    if (type === 'employees') {",
+                    "        grid = view.down('employeegrid');",
+                    "        form = view.down('employeeform');",
+                    "",
+                    "        if (grid && grid.getSelectable) {",
+                    "            grid.getSelectable().deselectAll();",
+                    "            form.hide();",
+                    "        }",
+                    "    }",
+                    "}"
+                ],
+                "url": ":type?"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "handleMainRoute",
+            "designerId": "db0d43a4-c4d8-4d75-920e-344d5d09f9de",
+            "cn": [
+                {
+                    "type": "routecondition",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "condition": "(employees)",
+                        "param": "type"
+                    },
+                    "configAlternates": {
+                        "condition": "string",
+                        "param": "string"
+                    },
+                    "name": "RouteCondition",
+                    "designerId": "7c10b43c-0ed3-47fe-a972-afbca642105d"
+                }
+            ]
+        },
+        {
+            "type": "Ext.route.Route",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "designer|params": [
+                    "type",
+                    "args"
+                ],
+                "fn": "handleDataRoute",
+                "implHandler": [
+                    "var me = this,",
+                    "    view = me.getView(),",
+                    "    store, grid, form, record;",
+                    "",
+                    "if (me.getLoggedIn()) {",
+                    "    if (type === 'employee') {",
+                    "        form = view.down('employeeform');",
+                    "        grid = view.down('employeegrid');",
+                    "",
+                    "        if (args === 'new') {",
+                    "            record = Ext.create('EmployeeApp.model.Employee');",
+                    "        } else {",
+                    "            store = grid.getStore();",
+                    "            record = store.getById(args);",
+                    "        }",
+                    "",
+                    "        form.getController().loadRecord(record);",
+                    "    }",
+                    "} else {",
+                    "    me.redirectTo('login');",
+                    "}"
+                ],
+                "url": ":type(/:args)?"
+            },
+            "configAlternates": {
+                "designer|params": "typedarray",
+                "fn": "string",
+                "implHandler": "code",
+                "url": "string"
+            },
+            "name": "handleDataRoute",
+            "designerId": "59a9eaca-8c07-45be-a953-89d882c50265",
+            "cn": [
+                {
+                    "type": "routecondition",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "condition": "(employee)",
+                        "param": "type"
+                    },
+                    "configAlternates": {
+                        "condition": "string",
+                        "param": "string"
+                    },
+                    "name": "RouteCondition1",
+                    "designerId": "3d60ab5b-0764-441b-94c3-a6b67283b5ad"
+                },
+                {
+                    "type": "routecondition",
+                    "reference": {
+                        "name": "items",
+                        "type": "array"
+                    },
+                    "codeClass": null,
+                    "userConfig": {
+                        "condition": "(.*)",
+                        "param": "args"
+                    },
+                    "configAlternates": {
+                        "condition": "string",
+                        "param": "string"
+                    },
+                    "name": "RouteCondition2",
+                    "designerId": "e4065a1f-9775-43ba-b6e8-ba4464b2ed19"
+                }
+            ]
+        },
+        {
+            "type": "basicfunction",
+            "reference": {
+                "name": "items",
+                "type": "array"
+            },
+            "codeClass": null,
+            "userConfig": {
+                "fn": "loginSuccess",
+                "implHandler": [
+                    "var me = this,",
+                    "    view = me.getView(),",
+                    "    logoutButton = view.lookupReference('logout');",
+                    "",
+                    "me.setLoggedIn(true);",
+                    "",
+                    "logoutButton.show();",
+                    "",
+                    "me.redirectTo('employees');"
+                ]
+            },
+            "configAlternates": {
+                "fn": "string",
+                "implHandler": "code"
+            },
+            "name": "loginSuccess",
+            "designerId": "5daca436-e032-4b5c-8ff4-5ffac7933d37"
+        }
+    ]
+}
