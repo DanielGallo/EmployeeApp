@@ -1,5 +1,7 @@
 # Employee App
-Sample Employee app built with Ext JS 7.2 Modern (frontend) and RAD Studio (backend). 
+Sample Employee app built with Ext JS 7.2 Modern (frontend) and RAD Studio (backend). This app was 
+demonstrated during the Virtual SenchaCon event on April 28th, 2020 (recording 
+[available here](https://www.brighttalk.com/webcast/11505/391129)).
 
 ## Prerequisites
 
